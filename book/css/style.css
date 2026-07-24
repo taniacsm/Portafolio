@@ -19,7 +19,16 @@
   font-weight: 400;
   font-style: normal;
 }
-
+/*fuente titulos*/
+.merriweather, #nomHero {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+/*fuente texto*/
 
 /*aqui comienza la animacion del header*/
 .marquee-container {
@@ -102,4 +111,11 @@ opacidad, movimiento y el final de la animacion*/
 /*Agregamos color a body*/
 body {
   background-color: #D9FFEA;
+}
+/*Estilo de boton*/
+button{
+  color: #A24596;
+  border: 4px solid black;
+  border-radius: 1rem;
+  box-shadow: 4px 4px black;
 }
