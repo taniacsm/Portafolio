@@ -1,0 +1,105 @@
+/*agregamos la paleta de colores*/
+:root {
+  --color-primario: #F5FFFF;
+  /*Bugambilia*/
+  --color-secundario: #D9FFEA;
+  /*azul*/
+  --color-terciario: #BBE893;
+  /*morado claro*/
+  --color-cuaternario: #A24596;
+  /*morado oscuro*/
+  --color-texto: #450D4C;
+  /*lila*/
+}
+
+/*traemos nuestras fuentes*/
+.press-start-2p-regular,
+#header {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/*aqui comienza la animacion del header*/
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  /* Corta el texto que sale de la pantalla */
+  white-space: nowrap;
+  /* Impide que el texto baje a otra linea */
+  background-color: #BBE893;
+  /* Ajusta a tu paleta de colores */
+  padding: 10px 0;
+}
+
+.marquee-track {
+  display: inline;
+  animation: scroll-marquee 2s linear infinite;
+}
+
+.marquee-track span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #A24596;
+}
+
+/*header con animacion*/
+/*vamos a usar la regla keyframe de css, esto nos sirve para definir
+fotogramas clave de la animacion, por ejemplo: inicio de la animacion
+opacidad, movimiento y el final de la animacion*/
+
+@keyframes efecto {
+  0% {
+    opacity: 100;
+    transform: translateX(0);
+  }
+
+  100% {
+
+    transform: translateX(-50%);
+  }
+}
+
+/*le llamamos a la clase del header*/
+#header {
+  animation: efecto 10s infinite;
+}
+
+/*agregamos la seccion hero*/
+.hero {
+    height: 100vh;
+    background-image: url(/book/assets/img/tanBar.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+/* Capa oscura para mejorar contraste del texto */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Contenido del Hero */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/*Agregamos color a body*/
+body {
+  background-color: #D9FFEA;
+}
