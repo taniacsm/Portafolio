@@ -90,7 +90,7 @@ opacidad, movimiento y el final de la animacion*/
 /*agregamos la seccion hero*/
 .hero {
     height: 90vh;
-    background-image: url(../book/assets/img/tanBar.png);
+    background-image: url(/book/assets/img/tanBar.png);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -122,7 +122,7 @@ opacidad, movimiento y el final de la animacion*/
 }
 /*Agregamos la imagen a body*/
 body {
-    background-image: url(../book/assets/img/fondoletras.png); 
+    background-image: url(/book/assets/img/fondoletras.png); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
