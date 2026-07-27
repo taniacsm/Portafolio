@@ -1,4 +1,7 @@
 /*agregamos la paleta de colores*/
+html{
+  scroll-behavior: smooth;
+}
 :root {
   --color-primario: #F5FFFF;
   /*Bugambilia*/
@@ -13,22 +16,30 @@
 }
 
 /*traemos nuestras fuentes*/
+/*fuente header*/
 .press-start-2p-regular,
-#header {
+#header , .logoB, .skills, .sobreMi, .linkedin, .correo , .subTrans, .tituloHero
+, .menuSkills, .iconoHtml, .iconoJs{
   font-family: "Press Start 2P", system-ui;
+  font-weight: 500;
+  font-style: normal;
+}
+/*fuente hero*/
+.playwrite-fr-moderne, .navbar-brand {
+  font-family: "Playwrite FR Moderne", cursive;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
-/*fuente titulos*/
-.merriweather, #nomHero {
-  font-family: "Merriweather", serif;
+
+/*fuente texto*/
+
+.raleway, .soyHero , .navbar, .parrafoSobre {
+  font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
 }
-/*fuente texto*/
 
 /*aqui comienza la animacion del header*/
 .marquee-container {
@@ -37,20 +48,21 @@
   /* Corta el texto que sale de la pantalla */
   white-space: nowrap;
   /* Impide que el texto baje a otra linea */
-  background-color: #BBE893;
+  background-color: #A24596;
   /* Ajusta a tu paleta de colores */
-  padding: 10px 0;
+  padding: 3px ;
 }
 
 .marquee-track {
-  display: inline;
-  animation: scroll-marquee 2s linear infinite;
+  display: linear;
+  animation: scroll-marquee 5s;
+  animation-iteration-count: infinite;
 }
 
 .marquee-track span {
   font-size: 1rem;
-  font-weight: 500;
-  color: #A24596;
+  font-weight: 300;
+  color:white;
 }
 
 /*header con animacion*/
@@ -77,26 +89,26 @@ opacidad, movimiento y el final de la animacion*/
 
 /*agregamos la seccion hero*/
 .hero {
-    height: 100vh;
-    background-image: url(/book/assets/img/tanBar.png);
+    height: 90vh;
+    background-image: url(../book/assets/img/tanBar.png);
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     color: white;
     position: relative;
 }
 /* Capa oscura para mejorar contraste del texto */
-.hero::before {
+.hero::before{
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
@@ -104,18 +116,109 @@ opacidad, movimiento y el final de la animacion*/
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 100%;
   padding: 20px;
+  
+}
+/*Agregamos la imagen a body*/
+body {
+    background-image: url(../book/assets/img/fondoletras.png); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* esta linea hace que al scrolear se quede fija*/
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
-/*Agregamos color a body*/
-body {
-  background-color: #D9FFEA;
-}
 /*Estilo de boton*/
-button{
-  color: #A24596;
-  border: 4px solid black;
-  border-radius: 1rem;
-  box-shadow: 4px 4px black;
+.logoB {
+  border-radius: 50px 5px;
+  background-color:  #D9FFEA;
+  border: none;
+  box-shadow: 5px 5px black;
+    
 }
+
+/*Boton Conoceme*/ 
+.skills, .sobreMi {
+  border-radius: 80px 0;
+  background-color:#BBE893 ;
+  border: none;
+  box-shadow: 4px 4px black;  
+}
+/*subtitulo Transformando*/
+.subTrans{
+
+  box-shadow: 10px 10px black; 
+  padding: 1rem 1rem 1rem 1rem;
+  border-color: black;
+  border-radius:0 100px 0 100px ;
+
+
+}
+/*estilos Parrado Sobre mi*/
+.parrafoSobre{
+  border-radius: 100px 0 100px 0;
+  background-color:#BBE893;
+  border: none;
+  box-shadow: 10px 10px black;
+  
+}
+/*estilos navBar*/
+
+/*estilos imagen seccion sobre mi*/
+.barSobre {
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
+  text-align: justify;
+}
+/*Boton linkedin*/
+.linkedin{
+  border-radius: 80px 0;
+  background-color:#0A66C2;
+  border: none;
+  box-shadow: 10px 10px black;
+  text-align: right;
+}
+
+/*boton onclick correo*/
+.correo{
+  border-radius: 80px 0;
+  background-color:yellow;
+  border: none;
+  box-shadow: 10px 10px black;
+  text-align: right;
+}
+.menuSkills{
+    border-radius: 80px 0;
+    background-image: linear-gradient(to top,#A24596,#450D4C);
+    border: none;
+    box-shadow: 4px 4px black;
+      
+}
+/*lista de skills*/
+
+.tituloHero{
+  text-align: right;
+}
+
+.skillCarr{
+  overflow: hidden;
+  width: 100%;
+  padding: 2rem 0;
+  background-color: #BBE893;
+}
+.movCarr{
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: desplazar 20s linear infinite;
+}
+
+/*Pausa el movimiento con el cursor*/
+.movCarr:hover{
+  animation-play-state: paused;
+}
+
